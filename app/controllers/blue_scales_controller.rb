@@ -1,4 +1,4 @@
-class BlueScalesController < ApplicationsController
+class BlueScalesController < ApplicationController
   def new
     @blue_scale = BlueScale.new
   end

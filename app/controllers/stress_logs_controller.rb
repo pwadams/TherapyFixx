@@ -1,4 +1,4 @@
-class StressLogsController < ApplicationsController
+class StressLogsController < ApplicationController
   def new
     @stress_log = StressLog.new
   end

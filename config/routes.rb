@@ -8,14 +8,12 @@ Rails.application.routes.draw do
    post 'sign-in', to: 'authentication#create'
    get 'sign-out', to: 'authentication#destroy'
 
-   get 'anxiety_scale', to: 'assessments#index'
-
   resources :sessions
 
   resources :assessments, only: [:index]
-  resources :anxiety_scales, only: [:show]
-  resources :blue_scales, only: [:show]
-  resources :stress_logs, only: [:show]
+  resources :anxiety_scales, only: [:new, :show]
+  resources :blue_scales, only: [:new, :show]
+  resources :stress_logs, only: [:new, :show]
 
 
   resources :journals do
