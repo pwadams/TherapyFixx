@@ -1,35 +1,17 @@
 <h1>
   <div class= "page-header">
-      <% if current_user.is_owner?(@project) %>
-    <div class="pull-right">
-    <%=link_to "Edit", edit_project_path(@project), class: "btn btn-info" %>
-    </div>
-    <% end %>
-    <%= @project.name %>
+    <%= @journal.name %>
   </div>
 </h1>
 
 <ol class="breadcrumb">
-  <li><%= link_to "Projects", projects_path %></li>
-  <li class="active"><%= @project.name %></li>
+  <li><%= link_to "Journals", journals_path %></li>
+  <li class="active"><%= @journal.name %></li>
 </ol>
   <table class="table">
     <tbody>
       <tr>
-        <td><%= link_to pluralize(@project.tasks.count, "Task"), project_tasks_path(@project) %></td>
-      </tr>
-      <tr>
-        <td><%= link_to pluralize(@project.memberships.count, "Membership"), project_memberships_path(@project) %></td>
+        <td><%= link_to pluralize(@journal.entries.count, "Entry"), journal_entries_path(@journal) %></td>
       </tr>
     </tbody>
   </table>
-<% if current_user.is_owner?(@project) %>
-
-    <div class="well">
-  <h4> Delete </h4>
-  <%= "Deleting this project will also delete #{pluralize(@project.memberships.count, 'membership')}, #{pluralize(@project.tasks.count, 'task')} and associated comments." %>
-  <br>
-  <br>
-  <%=link_to "Delete", project_path(@project), method: "delete", class: "btn btn-danger", data: {confirm: "Are you sure?"} %>
-  </div>
-<% end %>

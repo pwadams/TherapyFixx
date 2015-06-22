@@ -19,7 +19,8 @@ class LoudelementApi
       req.headers['Accept'] = 'application/json'
     end
     response = JSON.parse(response.body)
-    p sentiment = response["sentiment-score"]
+    # p sentiment = response["sentiment-score"]
+    response["sentiment-score"]
   end
 end
 
