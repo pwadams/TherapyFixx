@@ -1,3 +1,3 @@
 class Entry < ActiveRecord::Base
-  belongs_to :journal, dependant: :destroy
+  belongs_to :journal, dependent: :destroy
 end

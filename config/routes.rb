@@ -2,71 +2,30 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'sign-up', to: 'patients#new'
+   post 'sign-up', to: 'patients#create'
+   get 'sign-in', to: 'authentication#new'
+   post 'sign-in', to: 'authentication#create'
+   get 'sign-out', to: 'authentication#destroy'
+
+   get 'anxiety_scale', to: 'assessments#index'
+
   resources :sessions
 
-  resources :assessments
+  resources :assessments, only: [:index]
+  resources :anxiety_scales, only: [:show]
+  resources :blue_scales, only: [:show]
+  resources :stress_logs, only: [:show]
+
 
   resources :journals do
     resources :entries
   end
 
-  resources :patients do
-   resources :beyond_verbal_results, only: [:show]
-  end
+  resources :patients
 
   resources :entries, only: [:show] do
      resources :comments, only: [:create]
   end
 
-
-
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end

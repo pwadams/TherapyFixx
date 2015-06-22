@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="assessments">
+      <img class="featurette-image img-circle img-responsive pull-right" <%=image_tag("newtangled.jpg") %>
+      <h2 class="featurette-heading">Self Assessments <br>
+          <span class="text-muted">Untangle your thoughts.</span>
+      </h2>
+      <p class="lead"> Tough situations can trigger feelings and preventing relapse is key. These assessments can help you to practice the skills we use in sessions.</p>
+  </div>
+  <div class="tests">
+  <%= link_to "Stress Log", new_stress_log_path, class: "btn btn-warning" %>
+  <%= link_to "Blue Scale", new_blue_scale_path, class: "btn btn-warning" %>
+  <%= link_to "Anxiety Scale", new_anxiety_scale_path, class: "btn btn-warning" %>
+  </div>
+</div>
