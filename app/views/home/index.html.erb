@@ -1,6 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
 
-  <div class="image">
-    <%=image_tag("taskfull.jpg") %>
-    <span class="first">TaskFull.</span>
-    <span class=sub>Your Work, Organized.</span>
-</div>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Amaranth:700' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Untangle Your Mind - Get a TherapyFixx</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="headline">
+          <h1>Untangle Your Thoughts</h1>
+          <%=image_tag("newsessions.png") %>
+        </div>
+
+
+    <!-- Page Content -->
+
+        <hr class="featurette-divider">
+
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
+            <img class="featurette-image img-circle img-responsive pull-right" <%=image_tag("sessions.jpg") %>
+            <h2 class="featurette-heading">Sessions
+                <span class="text-muted">Therapy from your laptop</span>
+            </h2>
+            <p class="lead">These guided videos are designed to help you get through the rough spots. The comfort of your therapist's voice and familiar and confident. </p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Second Featurette -->
+        <div class="featurette" id="services">
+            <img class="featurette-image img-circle img-responsive pull-left" <%=image_tag("newtangled.jpg") %>
+            <h2 class="featurette-heading">Self Assessments
+                <span class="text-muted">Untangle your thoughts.</span>
+            </h2>
+            <p class="lead"> Tough situations can trigger feelings and preventing relapse is key. These assessments can help you to practice the skills we use in sessions.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Third Featurette -->
+        <div class="featurette" id="contact">
+            <img class="featurette-image img-circle img-responsive pull-right" <%=image_tag("journal1.jpg") %>
+            <h2 class="featurette-heading">Journaling
+                <span class="text-muted">Track your progress.</span>
+            </h2>
+            <p class="lead">Your journal is designed to help you record your feelings in situations that trigger your emotions. Your entries can be analyzed by your therapist for reference in your in-person sessions. Your therapist can also login and comment on these entries for helpful feedback.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

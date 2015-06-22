@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   resources :sessions
 
-  resources :activites
+  resources :assessments
 
-  resources :journal do
+  resources :journals do
     resources :entries
   end
 
