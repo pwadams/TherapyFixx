@@ -1,17 +1,24 @@
-<%=form_for @journal, html: {class: "form-horizontal"}  do |f| %>
+<div class="page-header">
+  <h1>New Journal</h1>
+
+  <ol class="breadcrumb">
+    <li><%= link_to "Journals", journals_path %></li>
+  </ol>
+
+</div><%=form_for @journal, html: {class: "form-horizontal"}  do |f| %>
 <%= render partial: "shared/errors", locals: {object: @journal, offset_option: 'col-md-offset-2'} %>
 
   <div class="form-group">
-    <%= f.label :name, class: "col-md-2 control-label" %>
+    <%= f.label :name, class: "col-md-1 control-label" %>
     <div class="col-md-6">
       <%= f.text_field :name, class: "form-control" %>
     </div>
   </div>
-
       <div class="form-group" >
-        <div class= "col-md-4 col-md-offset-2" >
+        <div class= "col-md-4 col-md-offset-1" >
           <%= f.submit class: "btn btn-primary" %>
           <%= link_to "Cancel", journals_path, class: "btn btn-default" %>
         </div>
       </div>
 <% end %>
+</div>

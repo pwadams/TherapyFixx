@@ -2,7 +2,7 @@ require 'faraday'
 require 'json'
 require 'cgi'
 
-class BeyondVerbalApi
+class LoudelementApi
 
   def initialize
     @conn = Faraday.new(:url => 'https://loudelement-free-natural-language-processing-service.p.mashape.com/nlp-url/') do |faraday|
@@ -24,5 +24,5 @@ class BeyondVerbalApi
 end
 
 
-client = BeyondVerbalApi.new
+client = LoudelementApi.new
 client.analyze('This is my journal entry from my form')

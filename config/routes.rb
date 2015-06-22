@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :entries
   end
 
-  resources :patients
+  resources :patients, only: [:show]
 
   resources :entries, only: [:show] do
      resources :comments, only: [:create]

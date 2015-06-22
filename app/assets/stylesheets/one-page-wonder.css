@@ -168,4 +168,14 @@ footer {
         margin-bottom: 10px;
         margin-left: 0;
     }
-}
+
+    .changefont
+    {
+       font-family: font-family: 'Days One', sans-serif;
+       font-size: 10px;
+    }
+
+    .logo {
+      font-family: font-family: 'Days One', sans-serif;
+      font-size: 1em;
+    }
