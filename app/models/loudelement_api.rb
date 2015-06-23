@@ -14,13 +14,13 @@ class LoudelementApi
 
   def analyze(text)
     response = @conn.get do |req|
-      req.url "https://loudelement-free-natural-language-processing-service.p.mashape.com/nlp-text/?text="
+      req.url "https://loudelement-free-natural-language-processing-service.p.mashape.com/nlp-text/?text=" + text
       req.headers['X-Mashape-Key'] = 'fXlvwoDQPqmsh9xUld8fsCOWsTefp1ANJxEjsnpCiGJK5oEsTt'
       req.headers['Accept'] = 'application/json'
     end
     response = JSON.parse(response.body)
     # p sentiment = response["sentiment-score"]
-    response["sentiment-score"]
+    response
   end
 end
 

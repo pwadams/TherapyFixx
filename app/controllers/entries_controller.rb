@@ -1,4 +1,10 @@
 class EntriesController < ApplicationController
+  def index
+    ext = @form_data[:text]
+        client = Loudelement.new
+        response = client.analyze(text)
+        @sentiment = response[:sentiment_score]
+  end
 
 
   def new
@@ -10,6 +16,13 @@ class EntriesController < ApplicationController
     @journal = Journal.find(params[:journal_id])
     @entry = @journal.entries.new(entry_params)
     @entry.save
+
+    # send to the api
+    client = LoudelementApi.new
+    response = client.analyze(@entry.description)
+    @entry.sentiment_score = response["sentiment-score"].to_s + " " + response["sentiment-text"]
+    @entry.save
+
     redirect_to journal_path(@journal)
   end
 
@@ -24,5 +37,4 @@ class EntriesController < ApplicationController
     def entry_params
       params.require(:entry).permit(:name, :date, :description)
     end
-
 end

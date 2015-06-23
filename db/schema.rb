@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623000119) do
+ActiveRecord::Schema.define(version: 20150623155033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,21 +34,14 @@ ActiveRecord::Schema.define(version: 20150623000119) do
     t.integer "overall"
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.integer  "therapist_id"
-    t.integer  "entry_id"
-    t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "entries", force: :cascade do |t|
     t.integer  "journal_id"
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.date     "date"
+    t.string   "sentiment_score"
   end
 
   create_table "journals", force: :cascade do |t|

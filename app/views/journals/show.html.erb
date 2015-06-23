@@ -21,11 +21,14 @@
   <table class="table">
     <thead>
       <th>Name</th>
+      <th>Sentiment Score</th>
+      <th>Links</th>
     </thead>
     <tbody>
        <% @entries.each do |entry| %>
          <tr>
            <td><%= entry.name %></td>
+           <td><%= entry.sentiment_score %></td>
            <td><%= link_to "delete", journal_entry_path(@journal, entry), class: "", method: :delete,
            data: { confirm: "Are you sure?"} %> </td>
          </tr>
