@@ -1,0 +1,27 @@
+
+// = require_tree .
+// = require_self
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+.sessions {
+  display: block;
+  margin-top: 50px;
+}
+
+.journals {
+  display: block;
+  margin-top: 50px;
+}
+
+.assessments {
+  display: block;
+  margin-top: 50px;
+}
+
+.tests {
+  margin: 25px 25px 25px 0;
+}
