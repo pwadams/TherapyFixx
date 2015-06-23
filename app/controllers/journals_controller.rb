@@ -22,6 +22,13 @@ class JournalsController < ApplicationController
     @entries = @journal.entries(params[:id])
   end
 
+  def destroy
+    @journal = Journal.find(params[:id])
+    @journal.destroy
+    redirect_to journals_path
+  end
+
+
   private
 
   def journal_params

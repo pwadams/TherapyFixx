@@ -28,6 +28,10 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/1.2.1/rangeslider.css' rel='stylesheet' type='text/css'>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/1.2.1/rangeslider.min.css' rel='stylesheet' type='text/css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/1.2.1/rangeslider.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/1.2.1/rangeslider.min.js'></script>
 </head>
 <body>
 
@@ -42,7 +46,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand changefont" <%= link_to "TherapyFixx", root_path %></a>
+              <%= link_to "TherapyFixx", root_path, class:"navbar-brand changefont" %>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,12 +71,13 @@
       <% end %>
           </div>
       </div>
-
   </nav>
+
 
   <%= flash[:notice] %></p>
 
 <%= yield %>
+
 
 <!-- Footer -->
 

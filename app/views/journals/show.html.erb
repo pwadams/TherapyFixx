@@ -1,16 +1,21 @@
-<h1>
+<div class= "container">
   <div class= "page-header">
+<h1>
     <%= @journal.name %>
-    <%=link_to "New Entry", new_journal_entry_path(@journal) %>
-  </div>
+    <div class="pull-right">
+      <%=link_to "New Entry", new_journal_entry_path(@journal), class: "btn btn-info" %>
+    </div>
 </h1>
+  </div>
+
 
 <ol class="breadcrumb">
   <li><%= link_to "Journals", journals_path %></li>
   <li class="active"><%= @journal.name %></li>
 </ol>
+</div>
 
-
+<div class= "container">
   <table class="table">
     <tbody>
       <tr>
@@ -26,15 +31,16 @@
     </thead>
     <tbody>
        <% @entries.each do |entry| %>
-         <tr>
            <td><%= entry.name %></td>
            <td><%= entry.sentiment_score %></td>
-           <td><%= link_to "delete", journal_entry_path(@journal, entry), class: "", method: :delete,
+           <td><%= link_to "delete", journal_entry_path(@journal, entry), class: "btn btn-info", method: :delete,
            data: { confirm: "Are you sure?"} %> </td>
-         </tr>
-         <tr>
+           <tr>
            <td><%= entry.description %></td>
+           <td></td>
+           <td></td>
          </tr>
        <% end %>
      </tbody>
    </table>
+ </div>
