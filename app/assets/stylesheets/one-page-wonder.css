@@ -8,24 +8,34 @@ body {
     margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+.header-image {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: url('newsessions.png') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
 
 .headline {
+    padding: 200px 0;
 }
 
 .headline h1 {
     text-align: center;
     font-family: 'Amaranth', sans-serif;
-    font-size: 3.50em;
-    position: absolute;
-    top: 100px;
-    width: 100%;
+    font-size: 3.5em;
+    top: 50px;
     color: #FF6600;
-
 }
 
 .headline h2 {
-    font-size: 77px;
-    color: transparent;
+  position: relative;
+  top: 125px;
+  font-size: 2em;
+  color: #FF6600;
 }
 
 .featurette-divider {
@@ -41,10 +51,11 @@ body {
 }
 
 .featurette-image.pull-right {
-    margin-left: 40px;
+
 }
 
 .featurette-heading {
+    margin-left:
     font-size: 50px;
 }
 

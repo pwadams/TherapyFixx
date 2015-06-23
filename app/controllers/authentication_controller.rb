@@ -1,14 +1,14 @@
 class AuthenticationController < ApplicationController
 
   def new
-    @patient = Patient.new
+    @user = User.new
   end
 
   def create
-    @patient = Patient.find_by_email(params[:email])
-    @Patient && @patient.authenticate(params[:password])
-    session[:patient_id] = @patient.id
-    redirect_to patient_path(@patient)
+    @user = User.find_by_email(params[:email])
+    @user && @user.authenticate(params[:password])
+    session[:user_id] = @user.id
+    redirect_to user_path(@user)
   end
 
   def destroy

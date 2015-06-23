@@ -11,7 +11,7 @@ class JournalsController < ApplicationController
     @journal = Journal.new(journal_params)
     if @journal.save
     flash[:notice] = "Journal was successfully created"
-    redirect_to journal_entries_path(@journal)
+    redirect_to journals_path
     else
     render :new
     end
@@ -19,7 +19,7 @@ class JournalsController < ApplicationController
 
   def show
     @journal = Journal.find(params[:id])
-    @entries = @journal.entries
+    @entries = @journal.entries(params[:id])
   end
 
   private

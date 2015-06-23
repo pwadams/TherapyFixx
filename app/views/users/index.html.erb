@@ -11,18 +11,15 @@
     </tr>
   </thead>
   <tbody>
-      <% @patient.each do |patient| %>
+      <% @user.each do |user| %>
         <tr>
           <td class="col-md-3">
-            <%= link_to "#{patient.full_name}", patient_path(patient) %>
+            <%= link_to "#{user.full_name}", user_path(user) %>
           </td>
           <td class="col-md-1">
-            <%= mail_to patient.email %>
-
+            <%= mail_to user.email %>
             </td>
-            <td>
-                <%= link_to "New Patient", new_patient_path, class:"pull-right" %>
-          </td>
         </tr>
+        <% end %>
     </tbody>
   </table>

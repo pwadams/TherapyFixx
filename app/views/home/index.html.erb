@@ -1,21 +1,23 @@
 
 <body>
 
-    <div class="container">
+  <!-- Full Width Image Header -->
+    <header class="header-image">
         <div class="headline">
-          <h1>Time To Get Your Fix</h1>
-          <%=image_tag("newsessions.png") %>
+            <div class="container">
+                <h1>Get Your Fixx</h1>
+                <h2>Your Therapist. Always There. </h2>
+            </div>
         </div>
+    </header>
 
-
-    <!-- Page Content -->
-
+    <div class="container">
         <hr class="featurette-divider">
 
         <!-- First Featurette -->
         <div class="featurette" id="about">
             <img class="featurette-image img-circle img-responsive pull-right" <%=image_tag("sessions.jpg") %>
-            <h2 class="featurette-heading">Sessions
+            <h2 class="featurette-heading">Sessions<br>
                 <span class="text-muted">Therapy from your laptop</span>
             </h2>
             <p class="lead">These guided videos are designed to help you get through the rough spots. The comfort of your therapist's voice and familiar and confident. </p>
@@ -26,7 +28,7 @@
         <!-- Second Featurette -->
         <div class="featurette" id="services">
             <img class="featurette-image img-circle img-responsive pull-left" <%=image_tag("newtangled.jpg") %>
-            <h2 class="featurette-heading">Self Assessments
+            <h2 class="featurette-heading">Self Assessments<br>
                 <span class="text-muted">Untangle your thoughts.</span>
             </h2>
             <p class="lead"> Tough situations can trigger feelings and preventing relapse is key. These assessments can help you to practice the skills we use in sessions.</p>
@@ -37,17 +39,16 @@
         <!-- Third Featurette -->
         <div class="featurette" id="contact">
             <img class="featurette-image img-circle img-responsive pull-right" <%=image_tag("journal1.jpg") %>
-            <h2 class="featurette-heading">Journaling
+            <h2 class="featurette-heading">Journaling<br>
                 <span class="text-muted">Track your progress.</span>
             </h2>
             <p class="lead">Your journal is designed to help you record your feelings in situations that trigger your emotions. Your entries can be analyzed by your therapist for reference in your in-person sessions. Your therapist can also login and comment on these entries for helpful feedback.</p>
         </div>
 
         <hr class="featurette-divider">
+      </div>
 
 
-    </div>
-    <!-- /.container -->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

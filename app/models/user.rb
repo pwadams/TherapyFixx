@@ -1,6 +1,5 @@
-class Patient < ActiveRecord::Base
+class User < ActiveRecord::Base
   has_secure_password
-  belongs_to :therapist
 
   validates :first_name, presence: true
   validates :last_name, presence: true

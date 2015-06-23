@@ -1,6 +1,7 @@
 <h1>
   <div class= "page-header">
     <%= @journal.name %>
+    <%=link_to "New Entry", new_journal_entry_path(@journal) %>
   </div>
 </h1>
 
@@ -8,10 +9,29 @@
   <li><%= link_to "Journals", journals_path %></li>
   <li class="active"><%= @journal.name %></li>
 </ol>
+
+
   <table class="table">
     <tbody>
       <tr>
-        <td><%= link_to pluralize(@journal.entries.count, "Entry"), journal_entries_path(@journal) %></td>
       </tr>
     </tbody>
   </table>
+
+  <table class="table">
+    <thead>
+      <th>Name</th>
+    </thead>
+    <tbody>
+       <% @entries.each do |entry| %>
+         <tr>
+           <td><%= entry.name %></td>
+           <td><%= link_to "delete", journal_entry_path(@journal, entry), class: "", method: :delete,
+           data: { confirm: "Are you sure?"} %> </td>
+         </tr>
+         <tr>
+           <td><%= entry.description %></td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>

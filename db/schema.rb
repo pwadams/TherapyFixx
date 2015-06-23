@@ -11,18 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622195203) do
+ActiveRecord::Schema.define(version: 20150623000119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "activities", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "category"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
   create_table "anxiety_scales", force: :cascade do |t|
     t.integer "patient_id"
@@ -65,19 +57,6 @@ ActiveRecord::Schema.define(version: 20150622195203) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "patients", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "password_confirmation"
-    t.integer  "age"
-    t.string   "therapist_code"
-    t.integer  "therapist_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
-
   create_table "stress_logs", force: :cascade do |t|
     t.integer "patient_id"
     t.date    "date"
@@ -108,14 +87,18 @@ ActiveRecord::Schema.define(version: 20150622195203) do
     t.text    "thought5"
   end
 
-  create_table "therapists", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
     t.string   "password_confirmation"
-    t.boolean  "admin"
+    t.integer  "age"
     t.string   "therapist_code"
+    t.integer  "therapist_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.boolean  "admin"
   end
 
 end

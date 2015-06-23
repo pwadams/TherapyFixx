@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
     <link href='http://fonts.googleapis.com/css?family=Days+One&subset=devanagari' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Amaranth:700' rel='stylesheet' type='text/css'>
@@ -51,10 +50,13 @@
                   <li><%= link_to "Sessions", sessions_path %></li>
                   <li><%= link_to "Assessments", assessments_path %></li>
                   <li><%= link_to "Journal", journals_path %></li>
+                  <% if current_user && current_user_is_admin %>
+                  <li><%= link_to "Patients", users_path %></li>
+                  <% end %>
               </ul>
       <% if current_user %>
       <ul class = "nav navbar-nav navbar-right">
-         <li> <%= link_to current_user.full_name, patient_path(current_user) %> </li>
+         <li> <%= link_to current_user.full_name, user_path(current_user) %> </li>
          <li> <%= link_to "Sign Out", sign_out_path %> </li>
      </ul>
       <% else %>
@@ -81,8 +83,7 @@
             <p>Copyright &copy; TherapyFixx 2014</p>
         </div>
     </div>
-  <div>
+  </div>
 </footer>
-
 </body>
 </html>

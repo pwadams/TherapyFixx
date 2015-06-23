@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user
-  helper_method :current_user_or_admin
+  helper_method :current_user_is_admin
   helper_method :authenticate_user
 
 
@@ -15,12 +15,20 @@ def authenticate_user
   end
 end
 
-def current_user
-  Patient.find(session[:patient_id]) if session[:patient_id].present?
+  def current_user
+    User.find(session[:user_id]) if session[:user_id].present?
+  end
+
+  def current_user_is_admin
+    current_user.admin == true
+  end
+
+  def ensure_admin
+  unless current_user.admin?
+    flash[:idiot] = "You do not have access"
+    redirect_to root_path
+  end
 end
 
-def current_user_or_admin(user)
-  user == current_user || current_user.admin
-end
 
 end
