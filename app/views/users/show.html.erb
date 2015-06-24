@@ -17,33 +17,47 @@
 </dl>
 
 <table class="table">
+  <h2> Journals</h2>
   <thead>
-    <th>Journal</th>
-    <th>Stress logs</th>
-    <th>Anxiety Scales</th>
+    <th>Name</th>
+    <th>Date</th>
   </thead>
   <tbody>
-    <% @journals.each do |journal| %>
       <tr>
+    <% current_user.journals.each do |journal| %>
         <td class="col-md-3">
-          <%= link_to "#{user.journal}", user_journal_path(@user) %>
+          <%= link_to journal.name, journal_path(journal) %>
         </td>
-      </tr>
     <% end %>
-
-    <% @stress_logs.each do |stresslog| %>
-      <tr>
-        <td class="col-md-3">
-          <%= link_to "#{user.stresslog}", user_stress_log_path(@user) %>
-        </td>
-      </tr>
-    <% end %>
-
-    <% @anxiety_scales.each do |anx| %>
-      <tr>
-        <td class="col-md-3">
-          <%= link_to "#{user.anx}", user_anxiety_scale_path(@user) %>
-        </td>
       </tr>
 </table>
+
+<table class="table">
+  <h2> Stress Logs</h2>
+  <thead>
+    <th>Date</th>
+  </thead>
+  <tbody>
+      <tr>
+    <% current_user.stress_logs.each do |stresslog| %>
+        <td class="col-md-3">
+          <%= link_to stresslog.date, user_stress_logs_path(@user) %>
+        </td>
     <% end %>
+      </tr>
+</table>
+
+<table class="table">
+  <h2>Anxiety Scales</h2>
+  <thead>
+    <th>Date</th>
+  </thead>
+  <tbody>
+      <tr>
+    <% current_user.anxiety_scales.each do |anxietyscale| %>
+        <td class="col-md-3">
+          <%= link_to anxietyscale.date, user_anxiety_scales_path(@user) %>
+        </td>
+    <% end %>
+      </tr>
+</table>

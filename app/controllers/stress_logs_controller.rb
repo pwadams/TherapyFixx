@@ -3,9 +3,21 @@ class StressLogsController < ApplicationController
     @stress_log = StressLog.new
   end
 
+  def create
+    @stress_log = StressLog.new(stress_log_params)
+    if @stress_log.save
+    flash[:notice] = "Stress Log has been created!"
+    redirect_to user_path(current_user)
+  else
+    render :new
+  end
+end
+
+
   def show
     @stress_log = StressLog.find(params[:id])
   end
+
 
   private
 
@@ -38,6 +50,6 @@ class StressLogsController < ApplicationController
     :thought3,
     :thought4,
     :thought5,
-  )
+  )..merge(user_id: current_user.id)
   end
 end

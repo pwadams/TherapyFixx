@@ -10,8 +10,8 @@ class JournalsController < ApplicationController
   def create
     @journal = Journal.new(journal_params)
     if @journal.save
+    redirect_to user_path(current_user)
     flash[:notice] = "Journal was successfully created"
-    redirect_to journals_path
     else
     render :new
     end
@@ -32,7 +32,7 @@ class JournalsController < ApplicationController
   private
 
   def journal_params
-    params.require(:journal).permit(:name)
+    params.require(:journal).permit(:name).merge(user_id: current_user.id)
   end
 
 end
