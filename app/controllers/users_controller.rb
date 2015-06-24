@@ -25,8 +25,9 @@ class UsersController < ApplicationController
 
     def show
     @user = User.find(params[:id])
-    @journal = Journal.all
-    @assessments = Assessment.all
+    @journals = Journal.all
+    @stress_logs = StressLog.all
+    @anxiety_scales = AnxietyScale.all
     end
 
 

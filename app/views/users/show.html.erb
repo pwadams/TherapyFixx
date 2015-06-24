@@ -1,7 +1,6 @@
 <h1>
   <div class= "page-header">
     <% if current_user %>
-
     <%= @user.full_name %>
     <% end %>
   </div>
@@ -17,27 +16,34 @@
   <dd><%= mail_to @user.email %></dd>
 </dl>
 
+<table class="table">
+  <thead>
+    <th>Journal</th>
+    <th>Stress logs</th>
+    <th>Anxiety Scales</th>
+  </thead>
+  <tbody>
+    <% @journals.each do |journal| %>
+      <tr>
+        <td class="col-md-3">
+          <%= link_to "#{user.journal}", user_journal_path(@user) %>
+        </td>
+      </tr>
+    <% end %>
 
-<% @journal.each do |journal| %>
-  <tr>
-    <td class="col-md-3">
-      <%= link_to "#{user.journal}", user_journal_path(@user) %>
-    </td>
-  </tr>
-<% end %>
+    <% @stress_logs.each do |stresslog| %>
+      <tr>
+        <td class="col-md-3">
+          <%= link_to "#{user.stresslog}", user_stress_log_path(@user) %>
+        </td>
+      </tr>
+    <% end %>
 
-<% @stress_logs.each do |stresslog| %>
-  <tr>
-    <td class="col-md-3">
-      <%= link_to "#{user.stresslog}", user_stress_log_path(@user) %>
-    </td>
-  </tr>
-<% end %>
-
-<% @anxiety_scales.each do |anx| %>
-  <tr>
-    <td class="col-md-3">
-      <%= link_to "#{user.anx}", user_anxiety_scale_path(@user) %>
-    </td>
-  </tr>
-<% end %>
+    <% @anxiety_scales.each do |anx| %>
+      <tr>
+        <td class="col-md-3">
+          <%= link_to "#{user.anx}", user_anxiety_scale_path(@user) %>
+        </td>
+      </tr>
+</table>
+    <% end %>
