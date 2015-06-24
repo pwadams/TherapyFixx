@@ -1,10 +1,12 @@
-
+<div class= "container">
+  <div class= "page-header">
   <table class="table">
     <thead>
       <th>Entries</th>
       <th>date</th>
     </thead>
     <tbody>
+      <%=link_to "New Entry", new_journal_entry_path(@journal), class: "btn btn-info pull-right" %>
 
        <% current_user.entries.each do |entry| %>
          <tr>
@@ -15,4 +17,5 @@
        <% end %>
      </tbody>
    </table>
-  </div>
+ </div>
+</div>
