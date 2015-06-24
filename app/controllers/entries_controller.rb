@@ -26,6 +26,10 @@ class EntriesController < ApplicationController
     redirect_to journal_path(@journal)
   end
 
+  def show
+    @entries = @journal.entries(params[:id])
+  end
+
   def destroy
     @journal = Journal.find(params[:journal_id])
     @entry = @journal.entries.find(params[:id])

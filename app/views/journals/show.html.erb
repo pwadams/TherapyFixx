@@ -1,45 +1,19 @@
-<div class= "container">
-  <div class= "page-header">
-<h1>
-    <%= @journal.name %>
-    <div class="pull-right">
-      <%=link_to "New Entry", new_journal_entry_path(@journal), class: "btn btn-info" %>
-    </div>
-</h1>
-  </div>
 
-<ol class="breadcrumb">
-  <li><%= link_to "Journals", journals_path %></li>
-  <li class="active"><%= @journal.name %></li>
-</ol>
-</div>
-
-<div class= "container">
-  <table class="table">
-    <tbody>
-      <tr>
-      </tr>
-    </tbody>
-  </table>
 
   <table class="table">
     <thead>
       <th>Name</th>
-      <th>Sentiment Score</th>
-      <th>Links</th>
+      <th>Entries</th>
     </thead>
     <tbody>
-       <% @entries.each do |entry| %>
-           <td><%= entry.name %></td>
-           <td><%= entry.sentiment_score %></td>
-           <td><%= link_to "delete", journal_entry_path(@journal, entry), class: "btn btn-info", method: :delete,
+       <% @journals.each do |journal| %>
+         <tr>
+           <td><%= link_to journal.name, journal_path(journal) %></td>
+           <td><%= link_to journal.entries.count, journal_path(journal) %></td>
+           <td><%= link_to "delete", journal_path(journal), class: "btn btn-info", method: :delete,
            data: { confirm: "Are you sure?"} %> </td>
-           <tr>
-           <td><%= entry.description %></td>
-           <td></td>
-           <td></td>
          </tr>
        <% end %>
      </tbody>
    </table>
- </div>
+  </div>
