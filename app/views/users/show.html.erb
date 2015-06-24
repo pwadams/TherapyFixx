@@ -25,7 +25,7 @@
   <tbody>
      <% current_user.journals.each do |journal| %>
        <tr>
-         <td><%= link_to journal.name, Journal_entries_path(journal) %></td>
+         <td><%= link_to journal.name, journal_entries_path(journal) %></td>
          <td><%= journal.entries.count %></td>
          <td><%= link_to "delete", journal_path(journal), class: "btn btn-info", method: :delete,
          data: { confirm: "Are you sure?"} %> </td>
@@ -45,9 +45,9 @@
       <tr>
     <% current_user.stress_logs.each do |stresslog| %>
         <td class="col-md-3">
-          <%= link_to stresslog.date, user_stress_logs_path(@user) %>
+          <%= link_to stresslog.date, stress_log_path(stresslog) %>
         </td>
-        <td><%= link_to "delete", stress_log_path(journal), class: "btn btn-info", method: :delete,
+        <td><%= link_to "delete", stress_log_path(stresslog), class: "btn btn-info", method: :delete,
         data: { confirm: "Are you sure?"} %> </td>
     <% end %>
       </tr>
@@ -62,9 +62,9 @@
       <tr>
     <% current_user.anxiety_scales.each do |anxietyscale| %>
         <td class="col-md-3">
-          <%= link_to anxietyscale.date, user_anxiety_scales_path(@user) %>
+          <%= link_to anxietyscale.date, anxiety_scale_path(anxietyscale) %>
         </td>
-        <td><%= link_to "delete", anxiety_scales_path(journal), class: "btn btn-info", method: :delete,
+        <td><%= link_to "delete", anxiety_scale_path(anxietyscale), class: "btn btn-info", method: :delete,
         data: { confirm: "Are you sure?"} %> </td>
     <% end %>
       </tr>

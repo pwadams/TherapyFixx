@@ -13,4 +13,14 @@ def full_name
   "#{first_name} #{last_name}"
 end
 
+def entries
+  results = []
+  self.journals.each do |journal|
+    journal.entries.each do |entry|
+      results << entry
+    end
+  end
+  results
+end
+
 end

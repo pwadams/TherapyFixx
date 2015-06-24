@@ -10,8 +10,8 @@ class JournalsController < ApplicationController
   def create
     @journal = Journal.new(journal_params)
     if @journal.save
-    redirect_to user_path(current_user)
     flash[:notice] = "Journal was successfully created"
+    redirect_to journal_entries_path(@journal)
     else
     render :new
     end
@@ -25,7 +25,7 @@ class JournalsController < ApplicationController
   def destroy
     @journal = Journal.find(params[:id])
     @journal.destroy
-    redirect_to users_path(@user)
+    redirect_to journals_path
   end
 
 

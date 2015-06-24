@@ -23,7 +23,7 @@ class EntriesController < ApplicationController
     @entry.sentiment_score = response["sentiment-score"].to_s + " " + response["sentiment-text"]
     @entry.save
 
-    redirect_to journal_path(@journal)
+    redirect_to journal_entry_path(@journal, @entry)
   end
 
   def show
@@ -35,11 +35,11 @@ class EntriesController < ApplicationController
     @journal = Journal.find(params[:journal_id])
     @entry = @journal.entries.find(params[:id])
     @entry.destroy
-    redirect_to journal_path(@journal)
+    redirect_to users_path(@user)
   end
 
   private
     def entry_params
-      params.require(:entry).permit(:name, :date, :description).merge
+      params.require(:entry).permit(:name, :date, :description)
     end
 end

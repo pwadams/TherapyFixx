@@ -6,10 +6,19 @@ class AuthenticationController < ApplicationController
 
   def create
     @user = User.find_by_email(params[:email])
-    @user && @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
-    redirect_to user_path(@user)
+    flash[:notice] = "Signed In."
+    if session[:previous_page] == nil
+      redirect_to user_path(@user)
+    else
+      redirect_to session[:previous_page]
+    end
+  else
+    flash[:danger] = "Email/Password combination is invalid."
+    render :new
   end
+end
 
   def destroy
     session.clear

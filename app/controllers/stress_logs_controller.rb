@@ -50,6 +50,6 @@ end
     :thought3,
     :thought4,
     :thought5,
-  )..merge(user_id: current_user.id)
+  ).merge(user_id: current_user.id)
   end
 end

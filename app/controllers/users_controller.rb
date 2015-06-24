@@ -15,7 +15,6 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
-        flash[:notice] = "Thanks for signing up!"
         redirect_to root_path
       else
         flash[notice]
@@ -29,9 +28,6 @@ class UsersController < ApplicationController
     @stress_logs = StressLog.all
     @anxiety_scales = AnxietyScale.all
     end
-
-
-
 
     private
 

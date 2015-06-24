@@ -6,6 +6,9 @@
 @import "bootstrap";
 @import "one-page-wonder";
 
+.copy {
+  text-align: center;
+}
 
 a.ui-link {
   color: #33CCCC;
@@ -81,6 +84,6 @@ body {
 
 
 #ck-button input:checked + span {
-    background-color:#911;
+    background-color: #B2E4D4;
     color:#fff;
 }
