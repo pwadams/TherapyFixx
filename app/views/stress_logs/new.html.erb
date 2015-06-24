@@ -10,65 +10,69 @@
   <%= form_for @stress_log, html: {class: "form-horizontal"}  do |f| %>
     <%= render partial: "shared/errors", locals: {object: @stress_log, offset_option: 'col-md-offset-2'} %>
 
+
     <%= f.label :date %>
     <%= f.date_field  :date %>
 
     <%= f.label :situation %>
     <%= f.text_area  :date %>
 
-    <%= f.label :afraid %>
+
+    <%= f.label %>
+    <%= f.check_box :afraid %>
 
     <%= f.label :angry %>
+    <%= f.check_box :angry %>
 
-    <%= f.label :annoyed %>
+    <%= f.check_box :annoyed %>
 
-    <%= f.label :ashamed %>
+    <%= f.check_box :ashamed %>
 
-    <%= f.label :anxious %>
+    <%= f.check_box :anxious %>
 
-    <%= f.label :bored %>
+    <%= f.check_box :bored %>
 
-    <%= f.label :confused %>
+    <%= f.check_box :confused %>
 
-    <%= f.label :depressed %>
+    <%= f.check_box :depressed %>
 
-    <%= f.label :disappointed %>
+    <%= f.check_box :disappointed %>
 
-    <%= f.label :down %>
+    <%= f.check_box :down %>
 
-    <%= f.label :embarrassed %>
+    <%= f.check_box :embarrassed %>
 
-    <%= f.label :frustrated%>
+    <%= f.check_box :frustrated%>
 
-    <%= f.label :guilty %>
+    <%= f.check_box :guilty %>
 
-    <%= f.label :irritated %>
+    <%= f.check_box :irritated %>
 
-    <%= f.label :lonely %>
+    <%= f.check_box :lonely %>
 
-    <%= f.label :sad %>
+    <%= f.check_box :sad %>
 
-    <%= f.label :jealous %>
+    <%= f.check_box :jealous %>
 
-    <%= f.label :tense %>
+    <%= f.check_box :tense %>
 
-    <%= f.label :custom %>
+    <%= f.check_box :custom %>
     <%= f.text_field  :custom %>
 
-    <%= f.label :thought %>
-    <%= f.text_area :thought %>
+    <%= f.label :thought1, "Thought" %>
+    <%= f.text_area :thought1 %>
 
-    <%= f.label :thought %>
-    <%= f.text_area :thought %>
+    <%= f.label :thought2, "Thought" %>
+    <%= f.text_area :thought2 %>
 
-    <%= f.label :thought %>
-    <%= f.text_area :thought %>
+    <%= f.label :thought3, "Thought" %>
+    <%= f.text_area :thought3 %>
 
-    <%= f.label :thought %>
-    <%= f.text_area :thought %>
+    <%= f.label :thought4, "Thought" %>
+    <%= f.text_area :thought4 %>
 
-    <%= f.label :thought %>
-    <%= f.text_area :thought %>
+    <%= f.label :thought5, "Thought" %>
+    <%= f.text_area :thought5 %>
 
 
 <%= f.submit %>
