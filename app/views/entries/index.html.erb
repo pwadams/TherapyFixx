@@ -1,0 +1,17 @@
+
+  <table class="table">
+    <thead>
+      <th>Entries</th>
+      <th>date</th>
+    </thead>
+    <tbody>
+       <% current_user.journals.entries.each do |entry| %>
+         <tr>
+           <td><%= link_to entry.name, journal_entry_path(@journal, entry) %></td>
+           <td><%= link_to "delete", journal_path(@journal), class: "btn btn-info", method: :delete,
+           data: { confirm: "Are you sure?"} %> </td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>
+  </div>

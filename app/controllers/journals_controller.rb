@@ -25,7 +25,7 @@ class JournalsController < ApplicationController
   def destroy
     @journal = Journal.find(params[:id])
     @journal.destroy
-    redirect_to journals_path
+    redirect_to users_path(@user)
   end
 
 

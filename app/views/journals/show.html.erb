@@ -6,9 +6,9 @@
       <th>Entries</th>
     </thead>
     <tbody>
-       <% @journals.each do |journal| %>
+       <% current_user.journals.each do |journal| %>
          <tr>
-           <td><%= link_to journal.name, journal_path(journal) %></td>
+           <td><%= link_to journal.name, journal_entries_path(journal) %></td>
            <td><%= link_to journal.entries.count, journal_path(journal) %></td>
            <td><%= link_to "delete", journal_path(journal), class: "btn btn-info", method: :delete,
            data: { confirm: "Are you sure?"} %> </td>

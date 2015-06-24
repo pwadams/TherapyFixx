@@ -1,9 +1,9 @@
 class EntriesController < ApplicationController
+
   def index
-    ext = @form_data[:text]
-        client = Loudelement.new
-        response = client.analyze(text)
-        @sentiment = response[:sentiment_score]
+    @journal = Journal.find(params[:journal_id])
+    @entries = Entry.all
+
   end
 
 
@@ -27,6 +27,7 @@ class EntriesController < ApplicationController
   end
 
   def show
+    @journal = Journal.find(params[:journal_id])
     @entries = @journal.entries(params[:id])
   end
 
@@ -39,6 +40,6 @@ class EntriesController < ApplicationController
 
   private
     def entry_params
-      params.require(:entry).permit(:name, :date, :description)
+      params.require(:entry).permit(:name, :date, :description).merge
     end
 end

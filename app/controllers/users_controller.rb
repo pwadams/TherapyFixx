@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     def create
       @user = User.new(user_params)
       if @user.save
-        session[:patient_id] = @user.id
+        session[:user_id] = @user.id
         flash[:notice] = "Thanks for signing up!"
         redirect_to root_path
       else
@@ -35,8 +35,14 @@ class UsersController < ApplicationController
 
     private
 
-    def patient_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :therapist_code, :therapist_id)
+    def user_params
+      params.require(:user).permit(:first_name,
+      :last_name,
+      :email,
+      :password,
+      :password_confirmation,
+      :therapist_code,
+      :therapist_id)
     end
 
   end
