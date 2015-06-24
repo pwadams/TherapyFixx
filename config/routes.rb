@@ -8,7 +8,7 @@ Rails.application.routes.draw do
    post 'sign-in', to: 'authentication#create'
    get 'sign-out', to: 'authentication#destroy'
 
-  resources :sessions
+  resources :sessions, only: [:index]
 
   resources :assessments, only: [:index]
   resources :anxiety_scales, only: [:index, :new, :show]
