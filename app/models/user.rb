@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
+  has_many  :anxiety_scales
+  has_many  :stress_logs
 
   validates :first_name, presence: true
   validates :last_name, presence: true

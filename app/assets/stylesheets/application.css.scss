@@ -7,20 +7,35 @@
 @import "one-page-wonder";
 
 
+a.ui-link {
+  color: #33CCCC;
+  text-decoration: none;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #FFF;
+}
+
+.ui-link {
+  text-shadow: none;
+}
 
 .sessions {
   display: block;
   margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 .journals {
   display: block;
   margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 .assessments {
   display: block;
   margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 .tests {

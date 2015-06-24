@@ -1,0 +1,69 @@
+<div class= "container">
+  <div class="page-header">
+    <h1>New Stress Log</h1>
+  </div>
+
+    <ol class="breadcrumb">
+      <li><%= link_to "Assessments", assessments_path %></li>
+    </ol>
+
+  <%= form_for @stress_log, html: {class: "form-horizontal"}  do |f| %>
+    <%= render partial: "shared/errors", locals: {object: @stress_log, offset_option: 'col-md-offset-2'} %>
+
+    <%= f.label :date %>
+    <%= f.date_field  :date %>
+
+    <%= f.label :situation %>
+    <%= f.text_area  :date %>
+
+    <%= f.label :afraid %>
+
+    <%= f.label :angry %>
+
+    <%= f.label :annoyed %>
+
+    <%= f.label :ashamed %>
+
+    <%= f.label :anxious %>
+
+    <%= f.label :bored %>
+
+    <%= f.label :confused %>
+
+    <%= f.label :depressed %>
+
+    <%= f.label :disappointed %>
+
+    <%= f.label :down %>
+
+    <%= f.label :embarrassed %>
+
+    <%= f.label :frustrated%>
+
+    <%= f.label :guilty %>
+
+    <%= f.label :irritated %>
+
+    <%= f.label :lonely %>
+
+    <%= f.label :sad %>
+
+    <%= f.label :jealous %>
+
+    <%= f.label :tense %>
+
+    <%= f.label :custom %>
+
+    <%= f.label :thought %>
+
+    <%= f.label :thought %>
+
+    <%= f.label :thought %>
+
+    <%= f.label :thought %>
+
+    <%= f.label :thought %>
+
+
+<%= f.submit %>
+  <% end %>

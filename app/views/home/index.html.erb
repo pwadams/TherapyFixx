@@ -17,8 +17,8 @@
         <!-- First Featurette -->
         <div class="featurette" id="about">
             <img class="featurette-image img-circle img-responsive pull-right" <%=image_tag("sessions.jpg") %>
-            <h2 class="featurette-heading">Sessions<br>
-                <span class="text-muted">Therapy from your laptop</span>
+            <h2 class="featurette-heading"><%=link_to "Sessions", sessions_path %> <br>
+                <span class="text-muted">Your doctor in.</span>
             </h2>
             <p class="lead">These guided videos are designed to help you get through the rough spots. The comfort of your therapist's voice and familiar and confident. </p>
         </div>
@@ -29,7 +29,7 @@
         <div class="featurette" id="services">
             <img class="featurette-image img-circle img-responsive pull-left" <%=image_tag("newtangled.jpg") %>
             <h2 class="featurette-heading">Self Assessments<br>
-                <span class="text-muted">Untangle your thoughts.</span>
+                <span class="text-muted">Your daily benchmarks.</span>
             </h2>
             <p class="lead"> Tough situations can trigger feelings and preventing relapse is key. These assessments can help you to practice the skills we use in sessions.</p>
         </div>
@@ -46,6 +46,8 @@
         </div>
 
         <hr class="featurette-divider">
+
+        <iframe allowtransparency="true" frameborder="0" height="220" id="mentalhealthtreatmentfinder" marginheight="0" marginwidth="0" name="mentalhealthtreatmentfinder" scrolling="no" src="https://findtreatment.samhsa.gov/locator/widget/220" title="Samhsa.gov" width="220"> https://findtreatment.samhsa.gov/locator/widget/220</iframe >
       </div>
 
 

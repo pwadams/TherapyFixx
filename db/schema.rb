@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623171951) do
+ActiveRecord::Schema.define(version: 20150624050502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "anxiety_scales", force: :cascade do |t|
-    t.integer "patient_id"
     t.date    "date"
     t.integer "worrying"
     t.integer "feeling_afraid"
     t.integer "feeling_tense"
     t.integer "difficulty_sleeping"
+    t.integer "user_id"
   end
 
   create_table "entries", force: :cascade do |t|
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20150623171951) do
   end
 
   create_table "stress_logs", force: :cascade do |t|
-    t.integer "patient_id"
+    t.integer "user_id"
     t.date    "date"
     t.text    "situation"
     t.boolean "afraid"

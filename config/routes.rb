@@ -11,9 +11,8 @@ Rails.application.routes.draw do
   resources :sessions
 
   resources :assessments, only: [:index]
-  resources :anxiety_scales, only: [:new, :show]
-  resources :blue_scales, only: [:new, :show]
-  resources :stress_logs, only: [:new, :show]
+  resources :anxiety_scales, only: [:index, :new, :show]
+  resources :stress_logs, only: [:index, :new, :show]
 
 
   resources :journals do

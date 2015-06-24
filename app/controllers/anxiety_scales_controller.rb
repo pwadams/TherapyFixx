@@ -1,4 +1,7 @@
 class AnxietyScalesController < ApplicationController
+
+  
+
   def new
     @anxiety_scale = AnxietyScale.new
   end

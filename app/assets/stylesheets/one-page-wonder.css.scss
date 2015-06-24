@@ -21,8 +21,7 @@ body {
 .header-image {
     display: block;
     width: 100%;
-    text-align: center;
-    background: asset-url("newsessions.png") no-repeat center center scroll;
+    background: asset-url("sessions.svg") no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -30,21 +29,21 @@ body {
 }
 
 .headline {
-    padding: 200px 0;
+    padding: 300px 0;
 }
 
 .headline h1 {
     text-align: center;
     font-family: 'Amaranth', sans-serif;
     font-size: 3.5em;
-    top: 50px;
     color: #FF6600;
 }
 
 .headline h2 {
   position: relative;
-  top: 125px;
-  font-size: 2em;
+  text-align: center;
+  top: 140px;
+  font-size: 2.5em;
   color: #FF6600;
 }
 
