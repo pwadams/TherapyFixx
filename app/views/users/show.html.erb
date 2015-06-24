@@ -16,3 +16,28 @@
   <dt>Email</dt>
   <dd><%= mail_to @user.email %></dd>
 </dl>
+
+
+<% @journal.each do |journal| %>
+  <tr>
+    <td class="col-md-3">
+      <%= link_to "#{user.journal}", user_journal_path(@user) %>
+    </td>
+  </tr>
+<% end %>
+
+<% @stress_logs.each do |stresslog| %>
+  <tr>
+    <td class="col-md-3">
+      <%= link_to "#{user.stresslog}", user_stress_log_path(@user) %>
+    </td>
+  </tr>
+<% end %>
+
+<% @anxiety_scales.each do |anx| %>
+  <tr>
+    <td class="col-md-3">
+      <%= link_to "#{user.anx}", user_anxiety_scale_path(@user) %>
+    </td>
+  </tr>
+<% end %>

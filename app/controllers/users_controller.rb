@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
+
   before_action :authenticate_user, only: [:index, :show]
   before_action :ensure_admin, only: [:index]
 
     def index
-      @user = User.all
+      @users = User.all
     end
 
     def new
@@ -24,6 +25,8 @@ class UsersController < ApplicationController
 
     def show
     @user = User.find(params[:id])
+    @journal = Journal.all
+    @assessments = Assessment.all
     end
 
 
