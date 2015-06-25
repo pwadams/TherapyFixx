@@ -3,6 +3,7 @@
 <h1>
     <%= @anxiety_scale.date.strftime("%m/%d/%Y") %>
 </h1>
+<p> The numbers represent an input from 0-100. Zero being none and 100 being the hardest.
   </div>
 
   <table class="table">
@@ -16,14 +17,10 @@
     <tbody>
        <% @anxiety_scales.each do |scale| %>
        <tr>
-           <td><%= scale.worrying %></td>
-           <td><%= scale.feeling_afraid %></td>
-           <td><%= scale.feeling_tense %></td>
-           <td><%= scale.difficulty_sleeping %></td>
-
-           <td><%= link_to "delete", anxiety_scale_path(scale), class: "btn btn-info", method: :delete,
-           data: { confirm: "Are you sure?"} %>
-           </td>
+         <td><%= scale.worrying %></td>
+         <td><%= scale.feeling_afraid %></td>
+         <td><%= scale.feeling_tense %></td>
+         <td><%= scale.difficulty_sleeping %></td>
          </tr>
        <% end %>
      </tbody>

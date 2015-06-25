@@ -1,7 +1,5 @@
 class AnxietyScalesController < ApplicationController
 
-
-
   def new
     @anxiety_scale = AnxietyScale.new
   end
@@ -20,6 +18,12 @@ class AnxietyScalesController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+      @anxiety_scale = @nxiety_scale.find(params[:id])
+      @anxiety_scale.destroy
+      redirect_to users_path(@user)
+    end
 
   private
 
