@@ -1,0 +1,31 @@
+<div class= "container">
+  <div class= "page-header">
+<h1>
+    <%= @anxiety_scale.date.strftime("%m/%d/%Y") %>
+</h1>
+  </div>
+
+  <table class="table">
+    <thead>
+      <th>Worrying</th>
+      <th>Feeling Afraid</th>
+      <th>Feeling Tense</th>
+      <th>Difficulty Sleeping</th>
+
+    </thead>
+    <tbody>
+       <% @anxiety_scales.each do |scale| %>
+       <tr>
+           <td><%= scale.worrying %></td>
+           <td><%= scale.feeling_afraid %></td>
+           <td><%= scale.feeling_tense %></td>
+           <td><%= scale.difficulty_sleeping %></td>
+
+           <td><%= link_to "delete", anxiety_scale_path(scale), class: "btn btn-info", method: :delete,
+           data: { confirm: "Are you sure?"} %>
+           </td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>
+ </div>

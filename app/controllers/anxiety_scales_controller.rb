@@ -8,6 +8,7 @@ class AnxietyScalesController < ApplicationController
 
   def show
     @anxiety_scale = AnxietyScale.find(params[:id])
+    @anxiety_scales = AnxietyScale.all
   end
 
   def create

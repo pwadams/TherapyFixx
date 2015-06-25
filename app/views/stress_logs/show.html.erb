@@ -1,0 +1,28 @@
+<div class= "container">
+  <div class= "page-header">
+<h1>
+    <%= @stress_log.date %>
+</h1>
+  </div>
+
+  <table class="table">
+    <thead>
+      <th>Date</th>
+      <th>Links</th>
+    </thead>
+    <tbody>
+       <% @stress_logs.each do |log| %>
+       <tr>
+           <td><%= log.worrying %></td>
+           <td><%= log.feeling_afraid %></td>
+           <td><%= log.feeling_tense %></td>
+           <td><%= log.difficulty_sleeping %></td>
+
+           <td><%= link_to "delete", stress_log_path(log), class: "btn btn-info", method: :delete,
+           data: { confirm: "Are you sure?"} %>
+           </td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>
+ </div>
