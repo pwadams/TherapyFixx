@@ -10,24 +10,37 @@
   <%= form_for @anxiety_scale, html: {class: "form-horizontal"}  do |f| %>
     <%= render partial: "shared/errors", locals: {object: @anxiety_scale, offset_option: 'col-md-offset-2'} %>
 
+    <div class="form-group">
+      <div class= "col-md-2">
+      <%= f.label :date, class: "control-label" %>
+      <%= f.date_field :date, class: "form-control" %>
+    </div>
 
-          <%= f.label :date %>
-          <%= f.date_field :date %><br>
-          <%= f.label :worrying %>
-          <%= f.range_field :worrying, :in => 0..100, :step => 1 %>
-          <%= f.label :feeling_afraid %>
-          <%= f.range_field :feeling_afraid, :in => 0..100, :step => 1 %>
-          <%= f.label :feeling_tense %>
-          <%= f.range_field :feeling_tense, :in => 0..100, :step => 1 %>
-          <%= f.label :difficulty_sleeping %>
-          <%= f.range_field :difficulty_sleeping, :in => 0..100, :step => 1 %>
-          <%= f.label :worrying %>
-          <%= f.range_field :worrying, :in => 0..100, :step => 1 %>
+      <div class= "col-md-8 col-md-offset-1">
+        <h4> Zero being not hard at all and 100 being the hardest</h4><br>
+        <h4> 0..................................25.................................50.................................75.................................100</h4>
 
 
+        <%= f.label :worrying %>
+        <%= f.range_field :worrying, :in => 0..100, :step => 1 %>
+        <br>
 
-        <%= f.submit %>
+        <%= f.label :feeling_afraid %>
+        <%= f.range_field :feeling_afraid, :in => 0..100, :step => 1 %>
+
+        <br>
+        <%= f.label :feeling_tense %>
+        <%= f.range_field :feeling_tense, :in => 0..100, :step => 1 %>
+
+        <br>
+        <%= f.label :difficulty_sleeping %>
+        <%= f.range_field :difficulty_sleeping, :in => 0..100, :step => 1 %>
+
+        <br>
+        <%= f.submit "Submit for your results", class: "btn btn-default" %>
         <%= link_to "Cancel", assessments_path, class: "btn btn-default" %>
+    </div>
+  </div>
       </div>
     </div>
 <% end %>
