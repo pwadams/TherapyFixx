@@ -11,13 +11,13 @@
     </tr>
   </thead>
 
+  <% @users.each do |user| %>
   <tbody>
     <tr>
-  <% @users.each do |user| %>
       <td><%= link_to user.full_name, user_path(user) %></td>
       <td><%= mail_to user.email %></td>
-      <% end %>
     </tr>
   </tbody>
+  <% end %>
 </table>
 </div>

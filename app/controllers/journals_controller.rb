@@ -10,7 +10,6 @@ class JournalsController < ApplicationController
   def create
     @journal = Journal.new(journal_params)
     if @journal.save
-    flash[:notice] = "Journal was successfully created"
     redirect_to journal_entries_path(@journal)
     else
     render :new
