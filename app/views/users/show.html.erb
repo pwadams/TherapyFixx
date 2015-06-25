@@ -31,14 +31,11 @@
       <th>Date</th>
     </thead>
     <tbody>
-        <tr>
       <% current_user.stress_logs.each do |stresslog| %>
+        <tr>
           <td class="col-md-3">
             <%= link_to stresslog.date, stress_log_path(stresslog) %>
-          </td>
-          <td><%= link_to "delete", stress_log_path(stresslog), class: "btn btn-info pull-right", method: :delete,
-          data: { confirm: "Are you sure?"} %>
-          </td>
+          <td>
       <% end %>
         </tr>
   </table>
@@ -54,8 +51,6 @@
           <td class="col-md-3">
             <%= link_to anxietyscale.date, anxiety_scale_path(anxietyscale) %>
           </td>
-          <td><%= link_to "delete", anxiety_scale_path(anxietyscale), class: "btn btn-info pull-right", method: :delete,
-          data: { confirm: "Are you sure?"} %> </td>
       <% end %>
         </tr>
   </table>

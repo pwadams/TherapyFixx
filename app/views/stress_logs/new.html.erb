@@ -162,13 +162,14 @@
             </label>
           </div>
 
-            <div class="col-md-5">
+          <div class="col-md-5">
             <label>
               <%= f.check_box :tense %>
               <%= f.label :tense %>
             </label>
-        <%= f.submit "Submit for your results", class: "btn btn-primary" %>
           </div>
         </div>
-    <% end %>
-      </div>
+        <div class="col-md-5 col-md-offset-1">
+              <%= f.submit %>
+        <div>
+          <% end %>
