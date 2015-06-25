@@ -19,11 +19,6 @@ end
     @stress_log = StressLog.find(params[:id])
   end
 
-  def destroy
-    @stress_log = @stress_log.find(params[:id])
-    @stress_log.destroy
-    redirect_to users_path(@user)
-  end
 
 
   private

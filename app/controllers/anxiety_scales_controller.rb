@@ -12,7 +12,6 @@ class AnxietyScalesController < ApplicationController
   def create
     @anxiety_scale = AnxietyScale.new(anxiety_scale_params)
     if @anxiety_scale.save
-      flash[:notice] = "Scale successfully created"
       redirect_to  user_path(current_user)
     else
       render :new
