@@ -15,6 +15,7 @@ end
 
 
   def show
+    @stress_logs = StressLog.all
     @stress_log = StressLog.find(params[:id])
   end
 

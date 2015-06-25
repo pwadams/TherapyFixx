@@ -1,78 +1,67 @@
 <div class= "container">
   <div class= "page-header">
 <h1>
-    <%= @stress_log.date %>
+    <%= @stress_log.date.strftime("%m/%d/%Y") %>
 </h1>
+           <td><%= link_to "delete", stress_logs_path(@log), class: "btn btn-info", method: :delete,
+           data: { confirm: "Are you sure?"} %>
+           </td>
   </div>
 
   <table class="table">
     <thead>
-      <th>Date</th>
-      <th>Links</th>
+      <th>angry</th>
+      <th>annoyed</th>
+      <th>ashamed</th>
+      <th>bored</th>
+      <th>depressed</th>
+      <th>disappointed</th>
+      <th>down</th>
+      <th>embarrassed</th>
+      <th>frustrated</th>
+      <th>guilty</th>
+      <th>irritated</th>
+      <th>lonely</th>
+      <th>sad</th>
+      <th>jealous</th>
+      <th>tense</th>
+      <th>custom</th>
+      <th>thought1</th>
+      <th>thought2</th>
+      <th>thought3</th>
+      <th>thought4</th>
+      <th>thought5</th>
+      <th>thought6</th>
     </thead>
     <tbody>
        <% @stress_logs.each do |log| %>
-       <tr>
-           <td><%= log.:annoyed %></td>
-           <td><%= log. %></td>
-           <td><%= log. %></td>
-           <td><%= log. %></td>
 
-           <td><%= link_to "delete", stress_log_path(log), class: "btn btn-info", method: :delete,
-           data: { confirm: "Are you sure?"} %>
-           </td>
-         </tr>
+       <tr>
+         <td><%= log.annoyed %></td> 
+         <td><%= log.angry %></td>
+         <td><%= log.ashamed %></td>
+         <td><%= log.anxious %></td>
+         <td><%= log.bored %></td>
+         <td><%= log.confused %></td>
+         <td><%= log.depressed %></td>
+         <td><%= log.disappointed %></td>
+         <td><%= log.down %></td>
+         <td><%= log.embarrassed %></td>
+         <td><%= log.frustrated %></td>
+         <td><%= log.guilty %></td>
+         <td><%= log.irritated %></td>
+         <td><%= log.lonely %></td>
+         <td><%= log.sad %></td>
+         <td><%= log.jealous %></td>
+         <td><%= log.tense %></td>
+         <td><%= log.custom %></td>
+         <td><%= log.thought1 %></td>
+         <td><%= log.thought2 %></td>
+         <td><%= log.thought3 %></td>
+         <td><%= log.thought4 %></td>
+         <td><%= log.thought5 %></td>
+       </tr>
        <% end %>
      </tbody>
    </table>
  </div>
-
- <%= f.check_box :annoyed %>
-
-     <%= f.check_box :ashamed %>
-
-     <%= f.check_box :anxious %>
-
-     <%= f.check_box :bored %>
-
-     <%= f.check_box :confused %>
-
-     <%= f.check_box :depressed %>
-
-     <%= f.check_box :disappointed %>
-
-     <%= f.check_box :down %>
-
-     <%= f.check_box :embarrassed %>
-
-     <%= f.check_box :frustrated%>
-
-     <%= f.check_box :guilty %>
-
-     <%= f.check_box :irritated %>
-
-     <%= f.check_box :lonely %>
-
-     <%= f.check_box :sad %>
-
-     <%= f.check_box :jealous %>
-
-     <%= f.check_box :tense %>
-
-     <%= f.check_box :custom %>
-     <%= f.text_field  :custom %>
-
-     <%= f.label :thought %>
-     <%= f.text_area :thought %>
-
-     <%= f.label :thought %>
-     <%= f.text_area :thought %>
-
-     <%= f.label :thought %>
-     <%= f.text_area :thought %>
-
-     <%= f.label :thought %>
-     <%= f.text_area :thought %>
-
-     <%= f.label :thought %>
-     <%= f.text_area :thought %>
