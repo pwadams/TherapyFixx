@@ -10,124 +10,116 @@
   <%= form_for @stress_log, html: {class: "form-horizontal"}  do |f| %>
     <%= render partial: "shared/errors", locals: {object: @stress_log, offset_option: 'col-md-offset-2'} %>
 
-
+    <div class="form-group">
     <%= f.label :date %>
     <%= f.date_field  :date %>
 
     <%= f.label :situation %>
-    <%= f.text_area  :situation, :cols =>100, :rows => 5 %>
+    <%= f.text_area  :situation, :cols =>50, :rows => 5 %>
+  </div>
 
+    <div class="form-group">
+      <div class="checkbox">
+        <div class="col-md-10 col-md-offset-2">
+            <label>
+              <%= f.check_box :afraid %>
+              <%= f.label :afraid %>
+            </label>
+            <label>
+              <%= f.check_box :angry %>
+              <%= f.label :angry %>
+            </label>
+            <label>
+              <%= f.check_box :annoyed %>
+              <%= f.label :annoyed %>
+            </label>
+            <label>
+              <%= f.check_box :ashamed %>
+              <%= f.label :ashamed %>
+            </label>
+            <label>
+              <%= f.check_box :anxious %>
+              <%= f.label :anxious %>
+            </label>
+            <label>
+              <%= f.check_box :bored %>
+              <%= f.label :bored %>
+            </label>
+            <label>
+              <%= f.check_box :confused %>
+              <%= f.label :confused %>
+            </label>
+            <label>
+              <%= f.check_box :depressed %>
+              <%= f.label :depressed %>
+            </label>
+            <label>
+              <%= f.check_box :disappointed %>
+              <%= f.label :disappointed %>
+            </label>
 
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'afraid' ><span>afraid</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'angry' ><span>angry</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'annoyed' ><span>annoyed</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'ashamed' ><span>ashamed</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'anxious' ><span>anxious</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'bored' ><span>bored</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'confused' ><span>confused</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'depressed' ><span>depressed</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'disappointed' ><span>disappointed</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'down' ><span>down</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'embarrassed' ><span>embarrassed</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'frustrated' ><span>frustrated</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'guilty' ><span>guilty</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'irritated' ><span>irritated</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'lonely' ><span>lonely</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'sad' ><span>sad</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'jealous' ><span>jealous</span>
-       </label>
-    </div>
-    <div id="ck-button">
-       <label>
-          <input type="checkbox" value: 'tense' ><span>tense</span>
-       </label>
+            <br>
+
+            <label>
+              <%= f.check_box :down %>
+              <%= f.label :down %>
+            </label>
+            <label>
+              <%= f.check_box :embarrassed %>
+              <%= f.label :embarrassed %>
+            </label>
+            <label>
+              <%= f.check_box :frustrated %>
+              <%= f.label :frustrated %>
+            </label>
+            <label>
+              <%= f.check_box :guilty %>
+              <%= f.label :guilty %>
+            </label>
+            <label>
+              <%= f.check_box :irritated %>
+              <%= f.label :irritated %>
+            </label>
+            <label>
+              <%= f.check_box :lonely %>
+              <%= f.label :lonely %>
+            </label>
+            <label>
+              <%= f.check_box :sad %>
+              <%= f.label :sad %>
+            </label>
+            <label>
+              <%= f.check_box :jealous %>
+              <%= f.label :jealous %>
+            </label>
+            <label>
+              <%= f.check_box :tense %>
+              <%= f.label :tense %>
+            </label
+        </div>
+      </div>
     </div>
 
 
-    <%= f.label :custom %>
-    <%= f.text_field  :custom %>
+    <div class="form-group">
+      <%= f.label :custom %>
+      <%= f.text_field  :custom %>
 
-    <%= f.label :thought1, "Thought" %>
-    <%= f.text_area :thought1 %>
+      <%= f.label :thought1, "Thought" %>
+      <%= f.text_area :thought1 %>
 
-    <%= f.label :thought2, "Thought" %>
-    <%= f.text_area :thought2 %>
+      <%= f.label :thought2, "Thought" %>
+      <%= f.text_area :thought2 %>
 
-    <%= f.label :thought3, "Thought" %>
-    <%= f.text_area :thought3 %>
+      <%= f.label :thought3, "Thought" %>
+      <%= f.text_area :thought3 %>
 
-    <%= f.label :thought4, "Thought" %>
-    <%= f.text_area :thought4 %>
+      <%= f.label :thought4, "Thought" %>
+      <%= f.text_area :thought4 %>
 
-    <%= f.label :thought5, "Thought" %>
-    <%= f.text_area :thought5 %>
-
+      <%= f.label :thought5, "Thought" %>
+      <%= f.text_area :thought5 %>
+    </div?
 
 <%= f.submit %>
   <% end %>

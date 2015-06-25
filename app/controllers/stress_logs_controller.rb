@@ -6,7 +6,7 @@ class StressLogsController < ApplicationController
   def create
     @stress_log = StressLog.new(stress_log_params)
     if @stress_log.save
-    flash[:notice] = "Stress Log has been created!"
+    flash[:notice] = "Stress Log created!"
     redirect_to user_path(current_user)
   else
     render :new

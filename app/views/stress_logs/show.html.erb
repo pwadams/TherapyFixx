@@ -13,10 +13,10 @@
     <tbody>
        <% @stress_logs.each do |log| %>
        <tr>
-           <td><%= log.worrying %></td>
-           <td><%= log.feeling_afraid %></td>
-           <td><%= log.feeling_tense %></td>
-           <td><%= log.difficulty_sleeping %></td>
+           <td><%= log.:annoyed %></td>
+           <td><%= log. %></td>
+           <td><%= log. %></td>
+           <td><%= log. %></td>
 
            <td><%= link_to "delete", stress_log_path(log), class: "btn btn-info", method: :delete,
            data: { confirm: "Are you sure?"} %>
@@ -26,3 +26,53 @@
      </tbody>
    </table>
  </div>
+
+ <%= f.check_box :annoyed %>
+
+     <%= f.check_box :ashamed %>
+
+     <%= f.check_box :anxious %>
+
+     <%= f.check_box :bored %>
+
+     <%= f.check_box :confused %>
+
+     <%= f.check_box :depressed %>
+
+     <%= f.check_box :disappointed %>
+
+     <%= f.check_box :down %>
+
+     <%= f.check_box :embarrassed %>
+
+     <%= f.check_box :frustrated%>
+
+     <%= f.check_box :guilty %>
+
+     <%= f.check_box :irritated %>
+
+     <%= f.check_box :lonely %>
+
+     <%= f.check_box :sad %>
+
+     <%= f.check_box :jealous %>
+
+     <%= f.check_box :tense %>
+
+     <%= f.check_box :custom %>
+     <%= f.text_field  :custom %>
+
+     <%= f.label :thought %>
+     <%= f.text_area :thought %>
+
+     <%= f.label :thought %>
+     <%= f.text_area :thought %>
+
+     <%= f.label :thought %>
+     <%= f.text_area :thought %>
+
+     <%= f.label :thought %>
+     <%= f.text_area :thought %>
+
+     <%= f.label :thought %>
+     <%= f.text_area :thought %>
