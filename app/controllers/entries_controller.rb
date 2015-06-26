@@ -35,7 +35,7 @@ class EntriesController < ApplicationController
     @journal = Journal.find(params[:journal_id])
     @entry = @journal.entries.find(params[:id])
     @entry.destroy
-    redirect_to users_path(@user)
+    redirect_to user_path(@user)
   end
 
   private
