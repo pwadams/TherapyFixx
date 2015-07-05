@@ -1,4 +1,6 @@
 class AssessmentsController < ApplicationController
+  before_action :authenticate_user, only: [:index, :show]
+
 
   def index
     @assessments = Assessment.all
