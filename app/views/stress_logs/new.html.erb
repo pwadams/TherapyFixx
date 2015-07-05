@@ -1,28 +1,25 @@
-
-  <div class= "col-md-5 col-md-offset-1">
-      <div class="page-header">
-      <ol class="breadcrumb">
-        <li><%= link_to "Assessments", assessments_path %></li>
-      </ol>
-        <h1 class= "assess">New Stress Log</h1>
+<div class= "row">
+<div class= "col-md-5 col-md-offset-1">
+  <div class="page-header">
+    <ol class="breadcrumb">
+      <li><%= link_to "Assessments", assessments_path %></li>
+    </ol>
+    <h1 class= "assess">New Stress Log</h1>
+  </div>
+  <div class="well">
+    <h3>Start Here.</h3>
+    <%= form_for @stress_log, html: {class: "form-horizontal"}  do |f| %>
+      <%= render partial: "shared/errors", locals: {object: @stress_log, offset_option: 'col-md-offset-2'} %>
+      <div class="form-group">
+        <%= f.label :date, class: "control-label" %>
+        <%= f.date_field :date, class: "form-control" %>
       </div>
-    <div class="well">
-      <h3>Start Here.</h3>
-      <%= form_for @stress_log, html: {class: "form-horizontal"}  do |f| %>
-        <%= render partial: "shared/errors", locals: {object: @stress_log, offset_option: 'col-md-offset-2'} %>
-          <div class="form-group">
-            <%= f.label :date, class: "control-label" %>
-            <%= f.date_field :date, class: "form-control" %>
-          </div>
-          <p> Please describe what was happening at the time you had feelings of stress.
-          <div class="form-group">
-            <%= f.label :situation, class: "control-label" %>
-            <%= f.text_area :situation, placeholder: "situation", class: "form-control" %>
-          </div>
+      <p> Please describe what was happening at the time you had feelings of stress.
+      <div class="form-group">
+        <%= f.label :situation, class: "control-label" %>
+        <%= f.text_area :situation, placeholder: "situation", class: "form-control" %>
       </div>
-    </div>
-    <div class= "col-md-5 col-md-offset-1">
-      <div class="page-header">
+      <br>
         <p> Please enter in separate boxes thoughts that entered your mind at the time.</p>
 
           <%= f.label :thought1, "Thought" %>
@@ -41,10 +38,13 @@
 
     <div class= "col-md-5 col-md-offset-1">
     <div class="page-header">
+      <ol class="breadcrumb">
+        <li></li>
+      </ol>
       <h1 class="assess"> Emotions </h1>
+    </div>
+    <div class="well">
         <p> Please record what you were feeling by choosing one or more words to describe the emotions you had at the time.</p>
-      </div>
-
         <div class="col-md-5">
             <label>
               <%= f.check_box :afraid %>
@@ -168,8 +168,8 @@
               <%= f.label :tense %>
             </label>
           </div>
-        </div>
-        <div class= "col-md-5 col-md-offset-1">
           <%= f.submit "Submit for your results", class: "btn btn-primary"  %>
         </div>
+      </div>
+    </div>
           <% end %>
