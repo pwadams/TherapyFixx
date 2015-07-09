@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   root 'home#index'
+  resources :home, only: [:new]
 
-  get 'sign-up', to: 'users#new'
+   get 'sign-up', to: 'users#new'
    post 'sign-up', to: 'users#create'
    get 'sign-in', to: 'authentication#new'
    post 'sign-in', to: 'authentication#create'
