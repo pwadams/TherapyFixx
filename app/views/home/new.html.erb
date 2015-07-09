@@ -1,47 +1,25 @@
 
-<body>
-  <!-- Full Width Image Header -->
-    <header class="header-image">
-        <div class="headline">
-            <div class="container">
-                <h1>Get Your Fixx</h1>
-                <h2>Your Therapist. Always There. </h2>
-            </div>
-        </div>
-    </header>
     <div class="container">
-        <hr class="featurette-divider">
-
-        <div class="featurette" id="about">
-            <img class="featurette-image img-circle img-responsive pull-right" <%=image_tag("sessions.jpg") %>
-            <h2 class="featurette-heading"><%=link_to "Sessions", sessions_path %> <br>
-                <span class="text-muted">Your doctor in.</span>
-            </h2>
-        </div>
-        <div class="featurette" id="services">
-            <img class="featurette-image img-circle img-responsive pull-left" <%=image_tag("newtangled.jpg") %>
-            <h2 class="featurette-heading"><%=link_to "Assessments", assessments_path %><br>
-                <span class="text-muted">Your daily benchmarks.</span>
-            </h2>
-        </div>
-
-        <div class="featurette" id="contact">
-            <img class="featurette-image img-circle img-responsive pull-right" <%=image_tag("journal1.jpg") %>
-            <h2 class="featurette-heading"><%=link_to "Journals", journals_path %><br>
-                <span class="text-muted">Track your progress.</span>
-            </h2>
-        </div>
-
-        <hr class="featurette-divider">
-        <iframe allowtransparency="true" frameborder="0" height="260" id="mentalhealthtreatmentfinder" marginheight="0" marginwidth="0" name="mentalhealthtreatmentfinder" scrolling="no" src="https://findtreatment.samhsa.gov/locator/widget/260" title="Samhsa.gov" width="260"> https://findtreatment.samhsa.gov/locator/widget/260</iframe >
+      <div class="page-header">
+        <h1>Start Here!</h1>
       </div>
+        <div class="row">
+          <div class= "col-md-4 start">
+            <h2 class="featurette-heading"><%=link_to "Sessions", sessions_path %></h2>
+              <h4><span class="text-muted">Guided therapy on-demand.</span></h4>
+            <img class="featurette-image img-circle img-responsive center-block" <%=image_tag("sessions.jpg") %>
+          </div>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+          <div class= "col-md-4 start">
+            <h2 class="featurette-heading"><%=link_to "Assessments", assessments_path %></h2>
+                <h4><span class="text-muted">Your daily benchmarks.</span></h4>
+            <img class="featurette-image img-circle img-responsive center-block" <%=image_tag("newtangled.jpg") %>
+          </div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+          <div class= "col-md-4 start">
+            <h2 class="featurette-heading"><%=link_to "Journals", journals_path %></h2>
+                <h4><span class="text-muted">Track your progress.</span></h4>
+            <img class="featurette-image img-circle img-responsive center-block" <%=image_tag("journal1.jpg") %>
+        </div>
+      </div>
+    </div>
