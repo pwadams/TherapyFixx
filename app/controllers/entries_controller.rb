@@ -18,10 +18,10 @@ class EntriesController < ApplicationController
     @entry.save
 
     # send to the api
-    client = LoudelementApi.new
-    response = client.analyze(@entry.description)
-    @entry.sentiment_score = response["sentiment-score"].to_s + " " + response["sentiment-text"]
-    @entry.save
+    # client = LoudelementApi.new
+    # response = client.analyze(@entry.description)
+    # @entry.sentiment_score = response["sentiment-score"].to_s + " " + response["sentiment-text"]
+    # @entry.save
 
     redirect_to journal_entry_path(@journal, @entry)
   end
